@@ -28,13 +28,14 @@ library(usethis)
 ```
 
 ```{r}
-#Pull data
+#Pull data - using a dummy "cars" dataset
 summary(cars)
 cars_data <- cars
 
-#Pin data to board
 board <- board_connect(auth = "envvar")
-board %>% pin_write(cars_data, "cars_dataset", type = "rds")
+
+# Change this to your username
+board %>% pin_write(cars_data, "lisa.anders/cars_dataset", type = "rds", force_identical_write = TRUE)
 ```
 ## Conclusion
 
@@ -49,7 +50,10 @@ Read it back with:
 ```{r}
 board <- board_connect(auth = "envvar")
 
+# Change this to your username
 cars_data_back <-board %>% pin_read("lisa.anders/cars_dataset")
+
+cars_data_back
 ```
 
 

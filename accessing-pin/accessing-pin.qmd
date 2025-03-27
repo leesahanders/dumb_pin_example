@@ -29,7 +29,9 @@ library(tidyverse)
 cars_data <- cars
 
 board <- board_connect(auth = "envvar")
-board %>% pin_write(cars_data, "pin_cars_min", type = "rds")
+
+# Change this to your username
+board %>% pin_write(cars_data, "lisa.anders/cars_dataset", type = "rds", force_identical_write = TRUE)
 ```
 
 
@@ -61,7 +63,8 @@ library(tidyverse)
 
 board <- board_connect(auth = "envvar")
 
-cars_data_back <-board %>% pin_read("lisa.anders/pin_cars_min")
+# Change this to your username
+cars_data_back <-board %>% pin_read("lisa.anders/cars_dataset")
 ```
 
 

@@ -16,6 +16,7 @@ library(rsconnect)
 
 board <- board_rsconnect(auth = "envvar")
 
+# Change this to your username
 cars_data_back <-board %>% pin_read("lisa.anders/cars_dataset")
 
 # DataTables example
