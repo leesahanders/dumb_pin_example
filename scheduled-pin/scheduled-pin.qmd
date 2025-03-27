@@ -1,0 +1,57 @@
+---
+title: "Accessing a pin on Connect from your local laptop"
+format: html
+author: "Lisa Anders"
+date: "2025-03-27"
+editor: source
+---
+
+## Purpose
+
+This script pulls demo information from mtcars and pins it so the data set is usable by others, and from applications. This document is deployed to Connect and can be scheduled. 
+
+Refer to the Connect documentation on pins here: <https://pins.rstudio.com/>
+
+Refer to the pins documentation here: <https://docs.posit.co/connect/user/pins/>
+
+```{r main, echo=FALSE, message=FALSE}
+library(dplyr)
+library(tidyverse)
+library(stringr)
+library(readr)
+library(pins)
+library(rsconnect)
+library(usethis)
+
+#Check our environment variables (for local use)
+# usethis::edit_r_environ()
+```
+
+```{r}
+#Pull data
+summary(cars)
+cars_data <- cars
+
+#Pin data to board
+board <- board_connect(auth = "envvar")
+board %>% pin_write(cars_data, "cars_dataset", type = "rds")
+```
+## Conclusion
+
+If you're reading this, it worked!
+
+This document will be run on a schedule in the Connect environment, to provide updated data.  
+
+## How to use the deployed pin 
+
+Read it back with: 
+
+```{r}
+board <- board_connect(auth = "envvar")
+
+cars_data_back <-board %>% pin_read("lisa.anders/cars_dataset")
+```
+
+
+
+
