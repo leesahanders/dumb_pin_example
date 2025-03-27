@@ -1,6 +1,5 @@
-# This script reads the pin we just wrote back into the IDE and displays it in a shiny app
+# This script reads the pin we just wrote back into the IDE and displays it in a shiny app - this pin needs to exist for the app to be able to run!
 
-knitr::opts_chunk$set(echo = TRUE)
 library(dplyr)
 library(tidyverse)
 library(stringr)
@@ -8,13 +7,15 @@ library(readr)
 library(pins)
 library(rsconnect)
 library(usethis)
+library(shiny)
+library(DT)
 
 #Check our environment variables
 # usethis::edit_r_environ()
 
 library(rsconnect)
 
-board <- board_rsconnect(auth = "envvar")
+board <- board_connect(auth = "envvar")
 
 # Change this to your username
 cars_data_back <-board %>% pin_read("lisa.anders/cars_dataset")
@@ -24,7 +25,7 @@ shinyApp(
   ui = fluidPage(
     fluidRow(
       column(12,
-             dataTableOutput('table')
+             DT::DTOutput('table')
       )
     )
   ),
