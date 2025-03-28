@@ -1,10 +1,17 @@
 ---
-title: "Accessing a pin on Connect from your local laptop"
+title: "Scheduling a pin to run on Connect"
 format: html
 author: "Lisa Anders"
 date: "2025-03-27"
+theme: pandoc
 editor: source
 ---
+
+```{r}
+#| echo: false
+library(gitlink)
+gitlink::ribbon_css("https://github.com/leesahanders/dumb_pin_example.git", text="View on GitHub")
+```
 
 ## Purpose
 
@@ -57,5 +64,17 @@ cars_data_back
 ```
 
 
+## Session details: 
 
+```{r}
+library(roperators)
+get_os()
+Sys.info()['sysname']
+R.Version()
+system2("whoami", stdout = TRUE, stderr = TRUE)
+system("cat /etc/*release")
+```
+
+
+<center> Built with [Quarto](http://quarto.org) </center>
 
