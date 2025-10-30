@@ -127,6 +127,10 @@ Instead of manually deleting the `renv/` files, the most streamlined and offic
     
 ### Resources
 
-Get started with renv in the RStudio IDE: https://docs.posit.co/ide/user/ide/guide/environments/r/renv.html
+Get started with renv in the RStudio IDE: <https://docs.posit.co/ide/user/ide/guide/environments/r/renv.html>
 
-You should be using renv: https://www.youtube.com/watch?v=GwVx_pf2uz4
+You should be using renv: <https://www.youtube.com/watch?v=GwVx_pf2uz4>
+
+Using Public Package Manager : <https://support.rstudio.com/hc/en-us/articles/360046703913-FAQ-for-RStudio-Public-Package-Manager>
+
+CRAN startup: Friendly R Startup Configuration: <https://cran.r-project.org/web/packages/startup/vignettes/startup-intro.html>
