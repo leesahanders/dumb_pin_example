@@ -68,6 +68,7 @@ If we want to reference a different repository we can either:
 
 - `options(repos = c(RSPM = "https://pkg.current.posit.team/cran/__linux__/jammy/latest"))` then `renv::restore(rebuild=TRUE)`
 - `renv::restore(repos="https://pkg.current.posit.team/cran/__linux__/jammy/latest", rebuild=TRUE)`
+- `renv::snapshot(repos = c("RSPM" = "https://packagemanager.posit.co/cran/__linux__/jammy/latest"))`
 
 ### Bioconductor
 
